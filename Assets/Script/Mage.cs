@@ -8,7 +8,6 @@ public class Mage : Enemys
     public Text text;
     public Image hpbar;
 
-    PCctrl a;
     void Awake()
     {
         hp = 60 + (EnemyCtrl.round * 7);

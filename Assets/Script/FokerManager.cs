@@ -16,37 +16,38 @@ public class Card
 }
 public class FokerManager : MonoBehaviour
 {
-    public GameObject Throwzone;
-    public GameObject[] Enemys = new GameObject[50];
-    public Button[] buttons = new Button[9];
-    public Image[] images = new Image[5];
-    public Sprite[] sprites = new Sprite[53];
-    public Text Sc;
-    public Text decktext;
-    Card[] card = new Card[52];
-    Card[] Usercard = new Card[9];
-    Card[] Throwcard = new Card[5];
-    string[] Patton = new string[4];
-    string[] sc = new string[10];
-    string k;
-    public string result;
+    public GameObject Throwzone;//Thorw 시 나오는 패널
+    public GameObject Lightning;
+    public GameObject[] Enemys = new GameObject[50];// Enemy GameObject 배열을 담아둘 GameObject 배열
+    public Button[] buttons = new Button[9]; // 드로우 카드 Button 배열
+    public Image[] images = new Image[5];// 쓰로우 카드 Image 배열
+    public Sprite[] sprites = new Sprite[53]; //포커 Sprite 
+    public Text Sc; // 포커 족보 text
+    public Text decktext; // 덱 리스트 숫자
+    Card[] card = new Card[52]; // 기본 카드 배열
+    Card[] Usercard = new Card[9]; // 유저 드로우 카드 배열
+    Card[] Throwcard = new Card[5]; // 유저 쓰로우 카드 배열
+    string[] Patton = new string[4]; // 카드 문양
+    string[] sc = new string[10]; // 포커 족보 string 값
+    string k; // 전달받을 string 값
+    public string result; // text 에 전달할 string 값
     float time = 0;
-    int CardCount = 0;
-    public static int CardCount2 =32;
-    public static int CardCount3 = 0;
-    public static float PokerDmg = 5;
-    bool drewing = false;
-    //bool Resulting = false;
-    void Start()
+    int CardCount = 0; // 처음 구매 카운트
+    public static int CardCount2 =32; // 추가 구매 카운트
+    public static int CardCount3 = 0; // 실제 카운트
+    public static float PokerDmg = 5; // 포커 데미지 배수 값
+    bool drewing = false; // 드로우 코루틴 함수 bool 값
+    void Start() 
     {
-        for (int i = 0; i < Usercard.Length; i++)
+        for (int i = 0; i < Usercard.Length; i++) // 시작시 유저 카드 초기화
         {
             Usercard[i] = new Card(1, "NULL", sprites[52]);
         }
-        for (int i = 0; i < Throwcard.Length; i++)
+        for (int i = 0; i < Throwcard.Length; i++) // 시작시 쓰로우 카드 초기화
         {
             Throwcard[i] = new Card(1, "NULL", sprites[52]);
         }
+        // 문양과 족보 설정
         Patton[0] = "Clover";
         Patton[1] = "Dieamond";
         Patton[2] = "Spade";
@@ -111,11 +112,11 @@ public class FokerManager : MonoBehaviour
         }       
         drewing = false;
     }
-    public void ThrowB()// 결과 창 보는 버튼 함수
+    public void ThrowB()// 결과 창 보는 버튼 함수 , 카드 족보 판별
     {
         int counts = 0;
         int straight = 0;
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 5; i++) // for 문 을 이용해  카드 정렬
         {
             for (int j = 0; j < 5; j++)
             {
@@ -144,7 +145,7 @@ public class FokerManager : MonoBehaviour
                 }
             }
         }
-        if (Throwcard[0].Num != 1)
+        if (Throwcard[0].Num != 1) // Top 일때 높은 수를 불러줌
         {
             result = Throwcard[0].Num.ToString() + " " + sc[0];
             if (Throwcard[0].Num == 11) { result = "J " + sc[0]; }
@@ -213,7 +214,7 @@ public class FokerManager : MonoBehaviour
         counts = 0;
         
         CardPower();
-        for (int i = 0; i < images.Length; i++)
+        for (int i = 0; i < images.Length; i++) // 족보 전달 후 초기화
         {
             images[i].sprite = sprites[52];
             Throwcard[i] = new Card(1, "NULL", sprites[52]);
@@ -221,7 +222,7 @@ public class FokerManager : MonoBehaviour
         StartCoroutine(TextResult(Sc));
         Throwzone.SetActive(false);
     }
-    void CardPower()
+    void CardPower() // 포커 정렬 전달 함수
     {
         int num = 0;         
        for(int i=0; i < sc.Length; i++)
@@ -237,10 +238,11 @@ public class FokerManager : MonoBehaviour
         }
        PokerAttack(num);
     }
-    void PokerAttack(int poker)
+    void PokerAttack(int poker) // 포커 공격 함수
     {
         Transform tr;
         GameObject[] enemys;
+        
         enemys = GameObject.FindGameObjectsWithTag("Enemy");           
         int num = 0;
         tr = GetComponent<Transform>();
@@ -266,6 +268,8 @@ public class FokerManager : MonoBehaviour
                 {
                     if (Enemys[j].GetComponent<Enemys>().hp > 0)
                     {
+
+                        LightAttack(Enemys[j]);
                         Enemys[j].GetComponent<Enemys>().hp -= (int)(Throwcard[0].Num * PokerDmg * (poker + 1));
                         Debug.Log(Enemys[j].GetComponent<Enemys>().hp);
                         break;
@@ -274,7 +278,13 @@ public class FokerManager : MonoBehaviour
             }
         }
     }
-    public void DeckSuffle()
+    void LightAttack(GameObject enemy)
+    {
+        GameObject a = Lightning;
+        Instantiate(a);
+        a.transform.Translate(enemy.transform.position);
+    }
+    public void DeckSuffle() // 덱 추가 구매 섞기
     {
         if (GameUI.gold >= 5)
         {
@@ -292,14 +302,14 @@ public class FokerManager : MonoBehaviour
             StartCoroutine(TextResult(decktext));
         }
     }
-    public IEnumerator TextResult(Text text)
+    public IEnumerator TextResult(Text text) // 텍스트를 ON OFF 하는 함수
     {
         text.gameObject.SetActive(true);
         text.text = result;
         yield return new WaitForSeconds(1.2f);
         text.gameObject.SetActive(false);        
     }
-    void CardSuffle()
+    void CardSuffle()// 카드 섞기
     {
         int rand;       
         for (int i = 0; i < card.Length; i++)
@@ -311,7 +321,7 @@ public class FokerManager : MonoBehaviour
             card[rand] = sfcard;
         }
     }
-    void CardCreate()
+    void CardCreate()//카드 만들기
     {
         int count = 0;
         for (int i = 1; i < 5; i++)
@@ -327,7 +337,7 @@ public class FokerManager : MonoBehaviour
     }  
     void Update()
     {      
-        if (!drewing)
+        if (!drewing)// 카드 드로우 
         {            
                 StartCoroutine(Carddrew());
         }

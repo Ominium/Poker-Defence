@@ -670,11 +670,11 @@ MonoBehaviour:
   Hiting: 0
   Hoting: 0
   dis: 0
+  dms: 1.5
   vec: {x: -1, y: 0}
   isDie: 0
   text: {fileID: 7253138019353819890}
   hpbar: {fileID: 612357599856174240}
-  dms: 1.5
 --- !u!1 &1703204860139504
 GameObject:
   m_ObjectHideFlags: 0

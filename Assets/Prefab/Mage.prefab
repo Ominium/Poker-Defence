@@ -265,11 +265,11 @@ MonoBehaviour:
   Hiting: 0
   Hoting: 0
   dis: 0
+  dms: 2.5
   vec: {x: -1, y: 0}
   isDie: 0
   text: {fileID: 5015890528755573929}
   hpbar: {fileID: 6287453484038382174}
-  dms: 2.5
 --- !u!1 &1673687432847226
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,7 +536,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.577}
+  m_AnchoredPosition: {x: 0, y: -0.267}
   m_SizeDelta: {x: 1.3217, y: 0.6453}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &902409137738167508

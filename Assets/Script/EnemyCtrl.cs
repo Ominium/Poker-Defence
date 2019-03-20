@@ -44,7 +44,7 @@ public  class EnemyCtrl :MonoBehaviour
             float x = 19.1f;
             float y = -2.5f;
             
-            int rand = Random.Range(0, 3);
+            int rand = Random.Range(0, 9);
             GameObject a = Instantiate(Enemy[rand]);
            
             
