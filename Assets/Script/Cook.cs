@@ -7,8 +7,6 @@ public class Cook : Enemys
 {
     public Text text;
     public Image hpbar;
-   
-    PCctrl a;
     void Awake()
     {
         hp = 150 + (EnemyCtrl.round * 10);

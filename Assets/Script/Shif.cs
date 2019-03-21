@@ -8,7 +8,6 @@ public class Shif : Enemys
     public Text text;
     public Image hpbar;
 
-    PCctrl a;
     void Awake()
     {
         hp = 55+ (EnemyCtrl.round * 5);

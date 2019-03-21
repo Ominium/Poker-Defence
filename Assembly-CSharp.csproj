@@ -71,6 +71,7 @@
     <Compile Include="Assets\Script\Enemys.cs" />
     <Compile Include="Assets\Script\FokerManager.cs" />
     <Compile Include="Assets\Script\GameUI.cs" />
+    <Compile Include="Assets\Script\Item.cs" />
     <Compile Include="Assets\Script\Knight.cs" />
     <Compile Include="Assets\Script\Light.cs" />
     <Compile Include="Assets\Script\Mage.cs" />

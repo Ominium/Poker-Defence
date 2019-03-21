@@ -15,7 +15,7 @@ public class GameUI : MonoBehaviour
     public static float time = 40.0f;
     public static int gold = 0;
     public static string name = "";
-    public FokerManager foker;
+    public FokerManager foker;  
     // Start is called before the first frame update
     void Awake()
     {

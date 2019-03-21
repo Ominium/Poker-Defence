@@ -7,8 +7,6 @@ public class Normal : Enemys
 {
     public Text text;
     public Image hpbar;
-
-    PCctrl a;
     void Awake()
     {
         hp = 80+ (EnemyCtrl.round * 8);

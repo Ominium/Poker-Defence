@@ -25,7 +25,7 @@ public class FokerManager : MonoBehaviour
     public Text Sc; // 포커 족보 text
     public Text decktext; // 덱 리스트 숫자
     Card[] card = new Card[52]; // 기본 카드 배열
-    Card[] Usercard = new Card[9]; // 유저 드로우 카드 배열
+    Card[] Usercard=new Card[9]; // 유저 드로우 카드 배열
     Card[] Throwcard = new Card[5]; // 유저 쓰로우 카드 배열
     string[] Patton = new string[4]; // 카드 문양
     string[] sc = new string[10]; // 포커 족보 string 값
@@ -37,6 +37,10 @@ public class FokerManager : MonoBehaviour
     public static int CardCount3 = 0; // 실제 카운트
     public static float PokerDmg = 5; // 포커 데미지 배수 값
     bool drewing = false; // 드로우 코루틴 함수 bool 값
+    void Awake()
+    {
+
+    }
     void Start() 
     {
         for (int i = 0; i < Usercard.Length; i++) // 시작시 유저 카드 초기화
@@ -249,7 +253,7 @@ public class FokerManager : MonoBehaviour
         tr.position = new Vector3(-17.35f, -3.23f, 0);
         for (int i = -1; i < poker; i++)
         {
-            float distance = 4.5f + poker;
+            float distance = 20.5f + poker;
           
             if (enemys.Length > 0)
             {
@@ -269,7 +273,7 @@ public class FokerManager : MonoBehaviour
                     if (Enemys[j].GetComponent<Enemys>().hp > 0)
                     {
 
-                        LightAttack(Enemys[j]);
+                        LightAttack(Enemys[j].transform);
                         Enemys[j].GetComponent<Enemys>().hp -= (int)(Throwcard[0].Num * PokerDmg * (poker + 1));
                         Debug.Log(Enemys[j].GetComponent<Enemys>().hp);
                         break;
@@ -278,11 +282,11 @@ public class FokerManager : MonoBehaviour
             }
         }
     }
-    void LightAttack(GameObject enemy)
+    void LightAttack(Transform enemy)
     {
         GameObject a = Lightning;
         Instantiate(a);
-        a.transform.Translate(enemy.transform.position);
+        a.transform.position=enemy.position;
     }
     public void DeckSuffle() // 덱 추가 구매 섞기
     {

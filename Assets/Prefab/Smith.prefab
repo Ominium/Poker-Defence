@@ -198,7 +198,7 @@ MonoBehaviour:
   Hiting: 0
   Hoting: 0
   dis: 0
-  dms: 0
+  dms: 1.5
   vec: {x: -1, y: 0}
   isDie: 0
   text: {fileID: 1414775334110175177}

@@ -7,8 +7,6 @@ public class Knight : Enemys
 {
     public Text text;
     public Image hpbar;
-
-    PCctrl a;
     void Awake()
     {
         hp = 300 + (EnemyCtrl.round * 10);
