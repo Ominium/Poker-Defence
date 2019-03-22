@@ -12,7 +12,7 @@ public class Wizard : Enemys
         hp = 40 + (EnemyCtrl.round * 6);
         mhp = hp;
         lhp = hp;
-        dis = 2.5f;
+        dis = 3.5f;
     }
 
     void Start()

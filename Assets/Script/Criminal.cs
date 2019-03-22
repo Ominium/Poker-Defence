@@ -13,7 +13,7 @@ public class Criminal : Enemys
         hp = 85 + (EnemyCtrl.round * 7);
         mhp = hp;
         lhp = hp;
-        dis = 1.85f;
+        dis = 2.85f;
     }
 
     void Start()

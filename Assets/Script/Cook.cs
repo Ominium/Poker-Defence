@@ -12,7 +12,7 @@ public class Cook : Enemys
         hp = 150 + (EnemyCtrl.round * 10);
         mhp = hp;
         lhp = hp;
-        dis = 1.65f;
+        dis = 2.65f;
     }
 
     void Start()

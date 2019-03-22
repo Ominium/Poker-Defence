@@ -12,7 +12,7 @@ public class Knight : Enemys
         hp = 300 + (EnemyCtrl.round * 10);
         mhp = hp;
         lhp = hp;
-        dis = 2f;
+        dis = 3f;
     }
 
     void Start()

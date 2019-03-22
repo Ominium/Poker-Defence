@@ -12,7 +12,7 @@ public class Dealer : Enemys
         hp = 70 + (EnemyCtrl.round * 7);
         mhp = hp;
         lhp = hp;
-        dis = 2.08f;
+        dis = 3.08f;
     }
 
     void Start()

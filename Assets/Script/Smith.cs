@@ -12,7 +12,7 @@ public class Smith : Enemys
         hp = 95 + (EnemyCtrl.round * 8);
         mhp = hp;
         lhp = hp;
-        dis = 1.75f;
+        dis = 2.75f;
     }
 
     void Start()

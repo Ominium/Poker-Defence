@@ -12,7 +12,7 @@ public class Normal : Enemys
         hp = 80+ (EnemyCtrl.round * 8);
         mhp = hp;
         lhp = hp;
-        dis = 1.89f;
+        dis = 2.89f;
     }
 
     void Start()

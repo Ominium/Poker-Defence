@@ -13,7 +13,7 @@ public class Shif : Enemys
         hp = 55+ (EnemyCtrl.round * 5);
         mhp = hp;
         lhp = hp;
-        dis = 1.45f;
+        dis = 2.45f;
     }
 
     void Start()

@@ -133,7 +133,7 @@ public class GameUI : MonoBehaviour
         }
         texts[0].text = "Round " + EnemyCtrl.round ;
         texts[1].text =  time.ToString("F1");
-        texts[2].text = "Card Deck : " + (52 - FokerManager.CardCount3).ToString();
+        texts[2].text = "Cards : " + (52 - FokerManager.CardCount3).ToString();
         texts[3].text = gold.ToString();
         texts[4].text = PCctrl.hp.ToString();
         if (PCctrl.hp <= 0)
