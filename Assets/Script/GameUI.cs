@@ -5,15 +5,14 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class GameUI : MonoBehaviour
 {
-    public int[] UpgradeState = new int[6];
+    public int[] UpgradeState = new int[4];
     public Text[] texts = new Text[5];
-    public Text[] statustext = new Text[5];
     public Text failtext;
     public GameObject upgrademenu;
     public GameObject gamemenu;
-    public GameObject statusmenu;
     public static float time = 40.0f;
     public static int gold = 0;
+    public static int gold2 = 0;
     public static string name = "";
     public FokerManager foker;  
     // Start is called before the first frame update
@@ -24,29 +23,12 @@ public class GameUI : MonoBehaviour
         UpgradeState[1] = PlayerPrefs.GetInt("UP1");
         UpgradeState[2] = PlayerPrefs.GetInt("UP2");
         UpgradeState[3] = PlayerPrefs.GetInt("UP3");
-        UpgradeState[4] = PlayerPrefs.GetInt("UP4");
-        UpgradeState[5] = PlayerPrefs.GetInt("UP5");
-    }
-    void StatusOpen()
-    {
-        statustext[0].text = "User name : " + name;
-        statustext[1].text = "HP : " + PCctrl.hp.ToString()+"  Ammor : "+PCctrl.Ammor.ToString();
-        statustext[2].text = "Arrow Dmg : "+ArrowMove.dmg.ToString()+"  Arrow Dms : " + PCctrl.dms.ToString();
-        statustext[3].text = "Poker Dmg : X" + FokerManager.PokerDmg.ToString() + "  Poker Reload : " + (52-FokerManager.CardCount2).ToString();
-        statustext[4].text = "Next Round : " + (EnemyCtrl.round + 1).ToString() + "  Gold : " + gold.ToString();
-
     }
     public void MenuManager(int i)
     {
         if (i == 0)
         {
             upgrademenu.SetActive(true);
-        }
-        if (i == 1)
-        {
-            statusmenu.SetActive(true);
-            upgrademenu.SetActive(false);
-            StatusOpen();
         }
     }
     public void ExitB(GameObject game)
@@ -73,33 +55,13 @@ public class GameUI : MonoBehaviour
         PlayerPrefs.SetInt("UP1", UpgradeState[1]);
         PlayerPrefs.SetInt("UP2", UpgradeState[2]);
         PlayerPrefs.SetInt("UP3",UpgradeState[3]);
-        PlayerPrefs.SetInt("UP4", UpgradeState[4]);
-        PlayerPrefs.SetInt("UP5", UpgradeState[5]);
     }
     public void UpGradeFunction(int i)
     {
         bool Failed = false;
         if (gold >= UpgradeState[i] * 10 + 5)
-        {
+        {          
             if (i == 0)
-            {
-                if (ArrowMove.dmg < 110)
-                {
-                    ArrowMove.dmg += 5;
-                    GoldUse(i);
-                }
-                else Failed = true;
-            }
-            if (i == 1)
-            {
-                if (PCctrl.dms > 0.5f)
-                {
-                    PCctrl.dms -= 0.05f;
-                    GoldUse(i);
-                }
-                else Failed = true;
-            }
-            if (i == 2)
             {
                 if (PCctrl.mhp < 200)
                 {
@@ -109,7 +71,7 @@ public class GameUI : MonoBehaviour
                 }
                 else Failed = true;
             }
-            if (i == 3)
+            if (i == 1)
             {
                 if (PCctrl.Ammor < 20)
                 {
@@ -117,7 +79,7 @@ public class GameUI : MonoBehaviour
                     GoldUse(i);
                 }
             }
-            if (i == 4)
+            if (i == 2)
             {
                 if (FokerManager.PokerDmg < 15f)
                 {
@@ -126,7 +88,7 @@ public class GameUI : MonoBehaviour
                 }
                 else Failed = true;
             }
-            if (i == 5)
+            if (i == 3)
             {
                 if (FokerManager.CardCount2 < 50)
                 {
@@ -170,7 +132,7 @@ public class GameUI : MonoBehaviour
            
         }
         texts[0].text = "Round " + EnemyCtrl.round ;
-        texts[1].text = "Time : " + time.ToString("F1");
+        texts[1].text =  time.ToString("F1");
         texts[2].text = "Card Deck : " + (52 - FokerManager.CardCount3).ToString();
         texts[3].text = gold.ToString();
         texts[4].text = PCctrl.hp.ToString();
@@ -182,8 +144,6 @@ public class GameUI : MonoBehaviour
             PlayerPrefs.SetInt("UP1", UpgradeState[1]);
             PlayerPrefs.SetInt("UP2", UpgradeState[2]);
             PlayerPrefs.SetInt("UP3", UpgradeState[3]);
-            PlayerPrefs.SetInt("UP4", UpgradeState[4]);
-            PlayerPrefs.SetInt("UP5", UpgradeState[5]);
             Time.timeScale = 0.0f;
         }
     }

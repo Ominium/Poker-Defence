@@ -17,7 +17,7 @@ public class Criminal : Enemys
     }
 
     void Start()
-    {
+    {   
         base.Start();
 
     }

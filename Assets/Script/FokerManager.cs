@@ -246,14 +246,16 @@ public class FokerManager : MonoBehaviour
     {
         Transform tr;
         GameObject[] enemys;
-        
+        GameObject game;
         enemys = GameObject.FindGameObjectsWithTag("Enemy");           
         int num = 0;
+        float distance;
+        float distance2;
         tr = GetComponent<Transform>();
         tr.position = new Vector3(-17.35f, -3.23f, 0);
         for (int i = -1; i < poker; i++)
         {
-            float distance = 20.5f + poker;
+            distance = 20.5f + poker;
           
             if (enemys.Length > 0)
             {
@@ -262,13 +264,23 @@ public class FokerManager : MonoBehaviour
                 {
                     d = Vector3.Distance(enemys[j].transform.position, tr.position);
                     if (d < distance)
-                    {
-                        num++;
+                    {                      
                         Enemys[num] = enemys[j];
-                        distance = d;                    
+                        num++;
                     }
                 }
-                for (int j = num; j > 0; j--)
+                for (int j = 0; j < num; j++)
+                {
+                    distance2 = Vector3.Distance(Enemys[0].transform.position, tr.position);
+                    float dis = Vector3.Distance(Enemys[j].transform.position, tr.position);
+                    if (dis < distance2)
+                    {
+                        game = Enemys[0];
+                        Enemys[0] = Enemys[j];
+                        Enemys[j] = game;
+                    }
+                }
+                for (int j = 0; j < num; j++)
                 {
                     if (Enemys[j].GetComponent<Enemys>().hp > 0)
                     {
