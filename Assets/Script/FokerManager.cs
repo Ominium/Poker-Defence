@@ -37,6 +37,7 @@ public class FokerManager : MonoBehaviour
     public static int CardCount3 = 0; // 실제 카운트
     public static float PokerDmg = 5; // 포커 데미지 배수 값
     bool drewing = false; // 드로우 코루틴 함수 bool 값
+    
     void Awake()
     {
 

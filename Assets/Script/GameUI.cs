@@ -5,16 +5,17 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class GameUI : MonoBehaviour
 {
+    Item[] useritems = new Item[18];
+    Item[] use_useritems = new Item[3];
     public int[] UpgradeState = new int[4];
     public Text[] texts = new Text[5];
     public Text failtext;
-    public GameObject upgrademenu;
-    public GameObject gamemenu;
     public static float time = 40.0f;
     public static int gold = 0;
     public static int gold2 = 0;
     public static string name = "";
-    public FokerManager foker;  
+    public FokerManager foker;
+    int[] useritemnum = new int[18];
     // Start is called before the first frame update
     void Awake()
     {
@@ -23,26 +24,22 @@ public class GameUI : MonoBehaviour
         UpgradeState[1] = PlayerPrefs.GetInt("UP1");
         UpgradeState[2] = PlayerPrefs.GetInt("UP2");
         UpgradeState[3] = PlayerPrefs.GetInt("UP3");
+        //for (int i = 0;i<useritemnum.Length;i++) {
+        //    useritemnum[i] = PlayerPrefs.GetInt("User", 0);
+        //}
+        //for (int i = 0; i < useritems.Length; i++) {
+        //    useritems[i] = GetComponent<Item>().items[useritemnum[i]];
+        //        }
     }
-    public void MenuManager(int i)
+    public void OPen(GameObject game)
     {
-        if (i == 0)
-        {
-            upgrademenu.SetActive(true);
-        }
+            game.SetActive(true);    
     }
     public void ExitB(GameObject game)
     {
         game.SetActive(false);
     }
-    public void GameManager()
-    {
-        gamemenu.SetActive(true);
-    }
-    public void Continue()
-    {
-        gamemenu.SetActive(false);
-    }
+
     public void ExitB2()
     {
         Application.Quit();
@@ -129,7 +126,7 @@ public class GameUI : MonoBehaviour
         {
             time = 40.0f;
             EnemyCtrl.RoundStarting = false;
-           
+            Debug.Log(useritems[0].item_name);
         }
         texts[0].text = "Round " + EnemyCtrl.round ;
         texts[1].text =  time.ToString("F1");

@@ -175,7 +175,6 @@ public  class EnemyCtrl :MonoBehaviour
                 num2 = 0;
                 num3 = 2;
                 Substitution(ref rand2,ref rand3);
-                Debug.Log(rand3);
                 break;
 
         }
