@@ -5,8 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class GameUI : MonoBehaviour
 {
-    Item[] useritems = new Item[18];
-    Item[] use_useritems = new Item[3];
+  
     public int[] UpgradeState = new int[4];
     public Text[] texts = new Text[5];
     public Text failtext;
@@ -15,21 +14,58 @@ public class GameUI : MonoBehaviour
     public static int gold2 = 0;
     public static string name = "";
     public FokerManager foker;
+    Item[] items = new Item[30];
+    Item[] useritems = new Item[18];
+    Item[] use_useritems = new Item[3];
+    int[] use_useritemnum = new int[18];
+    string[] use_useritemstr = new string[3];
     int[] useritemnum = new int[18];
+    string[] useritemstr = new string[18];
     // Start is called before the first frame update
     void Awake()
     {
+       for(int i =0; i < items.Length; i++)
+        {
+            items[i] = new Item(i, "번개", 30, "번개 내려오는 구슬", null, 'B');
+            if (i > 20)
+            {
+                items[i].item_class = 'A';
+            }
+            if (i > 27)
+            {
+                items[i].item_class = 'S';
+            }
+        }
+        items[0].item_sprite= Resources.Load("item_01", typeof(Sprite)) as Sprite;
+        for (int i = 0; i < useritemstr.Length; i++)
+        {
+            useritemstr[i] = "User" + i.ToString();
+        }
+        for (int i = 0; i < useritemnum.Length; i++)
+        {
+            useritemnum[i] = PlayerPrefs.GetInt(useritemstr[i]);
+        }
+        for (int i = 0; i < useritems.Length; i++)
+        {
+            useritems[i] = items[useritemnum[i]];
+        }
+        for(int i=0; i < use_useritemstr.Length; i++)
+        {
+            use_useritemstr[i] = "Use_User" + i.ToString();
+        }
+        for (int i = 0; i < useritemnum.Length; i++)
+        {
+            use_useritemnum[i] = PlayerPrefs.GetInt(use_useritemstr[i]);
+        }
+        for (int i = 0; i < useritems.Length; i++)
+        {
+           use_useritems[i] = items[useritemnum[i]];
+        }
         gold = PlayerPrefs.GetInt("Gold");
         UpgradeState[0] = PlayerPrefs.GetInt("UP0");
         UpgradeState[1] = PlayerPrefs.GetInt("UP1");
         UpgradeState[2] = PlayerPrefs.GetInt("UP2");
         UpgradeState[3] = PlayerPrefs.GetInt("UP3");
-        //for (int i = 0;i<useritemnum.Length;i++) {
-        //    useritemnum[i] = PlayerPrefs.GetInt("User", 0);
-        //}
-        //for (int i = 0; i < useritems.Length; i++) {
-        //    useritems[i] = GetComponent<Item>().items[useritemnum[i]];
-        //        }
     }
     public void OPen(GameObject game)
     {
@@ -52,6 +88,7 @@ public class GameUI : MonoBehaviour
         PlayerPrefs.SetInt("UP1", UpgradeState[1]);
         PlayerPrefs.SetInt("UP2", UpgradeState[2]);
         PlayerPrefs.SetInt("UP3",UpgradeState[3]);
+
     }
     public void UpGradeFunction(int i)
     {
@@ -126,7 +163,6 @@ public class GameUI : MonoBehaviour
         {
             time = 40.0f;
             EnemyCtrl.RoundStarting = false;
-            Debug.Log(useritems[0].item_name);
         }
         texts[0].text = "Round " + EnemyCtrl.round ;
         texts[1].text =  time.ToString("F1");
@@ -141,6 +177,14 @@ public class GameUI : MonoBehaviour
             PlayerPrefs.SetInt("UP1", UpgradeState[1]);
             PlayerPrefs.SetInt("UP2", UpgradeState[2]);
             PlayerPrefs.SetInt("UP3", UpgradeState[3]);
+            for (int i = 0; i < useritems.Length; i++)
+            {
+                PlayerPrefs.SetInt(useritemstr[i], useritems[i].item_num);
+            }
+            for(int i = 0; i < use_useritems.Length; i++)
+            {
+                PlayerPrefs.SetInt(use_useritemstr[i], use_useritems[i].item_num);
+            }
             Time.timeScale = 0.0f;
         }
     }
