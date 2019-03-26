@@ -11,25 +11,38 @@ public class GachaManager : MonoBehaviour
     Items item;
     public void GachaButton(int i)
     {
-        for (int m = 0; m < i; m++)
-        {
-
-
-            int random;
-            random = Random.Range(0, 100);
-            if (random < 70)
+       // if (GameUI.gold > i * 100)
+      //  {
+            for (int m = 0; m < i; m++)
             {
-                int random2;
-                random2 = Random.Range(0, 5);
-                item = baseList.itemList[random2];
-                if (inventory.itemList.Count < 20)
-                {
-                    inventory.itemList.Add(item);
-                }
-            }
 
-            GameUI.gold -= i * 100;
-        }
+
+                int random;
+                random = Random.Range(0, 100);
+                if (random < 70)
+                {
+                    int random2;
+                    random2 = Random.Range(1, 6);
+                    item = baseList.itemList[random2];
+                    if (inventory.itemList.Count < 20)
+                    {
+                        inventory.itemList.Add(item);
+                    }
+                }
+                if (random >= 70)
+                {
+                    int random2;
+                    random2 = Random.Range(6, 10);
+                    item = baseList.itemList[random2];
+                    if (inventory.itemList.Count < 20)
+                    {
+                        inventory.itemList.Add(item);
+                    }
+                }
+               // GameUI.gold = i * 100;
+              //  PlayerPrefs.SetInt("Gold", GameUI.gold);
+            }
+    //    }
     }
     public void BackMain()
     {

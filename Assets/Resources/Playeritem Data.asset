@@ -13,14 +13,15 @@ MonoBehaviour:
   m_Name: Playeritem Data
   m_EditorClassIdentifier: 
   itemList:
-  - item_num: 1
+  - item_num: 5
     item_class: 0
-    item_name: Wind
-    item_dmg: 0
-    item_text: "\uC0C1\uB300\uC758 \uC774\uB3D9\uC18D\uB3C4\uB97C \uAC10\uC18C\uC2DC\uD0A8\uB2E4."
-    item_sprite: {fileID: 21300000, guid: 39d08c6fe3f2f8e4d9e3eff5f27d4fe7, type: 3}
+    item_name: Coin
+    item_dmg: 20
+    item_text: "\uC77C\uC815 \uC2DC\uAC04 \uB9C8\uB2E4 \uB0AE\uC740 \uD655\uB960\uB85C
+      \uB3C8\uC744 \uD68D\uB4DD \uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: c29162d11d03499498205196908712a5, type: 3}
     item_Attributes: []
-  - item_num: 3
+  - item_num: 4
     item_class: 0
     item_name: Apple
     item_dmg: 0
@@ -28,7 +29,7 @@ MonoBehaviour:
       \uC18C\uB7C9 \uD68C\uBCF5\uD55C\uB2E4."
     item_sprite: {fileID: 21300000, guid: b6c7d27f0d59fc044b552da7076847a6, type: 3}
     item_Attributes: []
-  - item_num: 2
+  - item_num: 3
     item_class: 0
     item_name: Mushroom
     item_dmg: 0
@@ -36,31 +37,22 @@ MonoBehaviour:
       \uC18C\uB7C9 \uD68C\uBCF5\uD55C\uB2E4."
     item_sprite: {fileID: 21300000, guid: 421750e670078b94eaaf7932f9c6fc1a, type: 3}
     item_Attributes: []
-  - item_num: 3
-    item_class: 0
-    item_name: Apple
-    item_dmg: 0
-    item_text: "\uC790\uC2E0\uC758 \uD3EC\uCEE4 \uCE74\uB4DC\uB97C \uC77C\uC815 \uC2DC\uAC04\uB9C8\uB2E4
-      \uC18C\uB7C9 \uD68C\uBCF5\uD55C\uB2E4."
-    item_sprite: {fileID: 21300000, guid: b6c7d27f0d59fc044b552da7076847a6, type: 3}
+  - item_num: 6
+    item_class: 1
+    item_name: Machete
+    item_dmg: 20
+    item_text: "\uC801\uC774 \uAE30\uC9C0\uB97C \uACF5\uACA9\uD560\uB54C \uC77C\uC815\uD55C
+      \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
+    item_sprite: {fileID: 21300000, guid: a1c4e5c36c7ec7e42ae3cbadc63fb92a, type: 3}
     item_Attributes: []
-  - item_num: 4
-    item_class: 0
-    item_name: Coin
-    item_dmg: 0
-    item_text: "\uC77C\uC815 \uC2DC\uAC04 \uB9C8\uB2E4 \uB0AE\uC740 \uD655\uB960\uB85C
-      \uB3C8\uC744 \uD68D\uB4DD \uD55C\uB2E4."
-    item_sprite: {fileID: 21300000, guid: c29162d11d03499498205196908712a5, type: 3}
+  - item_num: 7
+    item_class: 1
+    item_name: Three Clover
+    item_dmg: 50
+    item_text: "\uC801\uC758 \uACF5\uACA9\uC744 \uC911\uAC04 \uD655\uB960\uB85C \uD68C\uD53C\uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 0c99c08fb2785eb4da2a6de83d8a7e03, type: 3}
     item_Attributes: []
-  - item_num: 4
-    item_class: 0
-    item_name: Coin
-    item_dmg: 0
-    item_text: "\uC77C\uC815 \uC2DC\uAC04 \uB9C8\uB2E4 \uB0AE\uC740 \uD655\uB960\uB85C
-      \uB3C8\uC744 \uD68D\uB4DD \uD55C\uB2E4."
-    item_sprite: {fileID: 21300000, guid: c29162d11d03499498205196908712a5, type: 3}
-    item_Attributes: []
-  - item_num: 0
+  - item_num: 1
     item_class: 0
     item_name: Blood
     item_dmg: 5
@@ -68,52 +60,22 @@ MonoBehaviour:
       \uB2EC\uAC8C\uD55C\uB2E4."
     item_sprite: {fileID: 21300000, guid: 830168f764471444d8a47b35247f811c, type: 3}
     item_Attributes: []
-  - item_num: 1
-    item_class: 0
-    item_name: Wind
-    item_dmg: 0
-    item_text: "\uC0C1\uB300\uC758 \uC774\uB3D9\uC18D\uB3C4\uB97C \uAC10\uC18C\uC2DC\uD0A8\uB2E4."
-    item_sprite: {fileID: 21300000, guid: 39d08c6fe3f2f8e4d9e3eff5f27d4fe7, type: 3}
+  - item_num: 7
+    item_class: 1
+    item_name: Three Clover
+    item_dmg: 50
+    item_text: "\uC801\uC758 \uACF5\uACA9\uC744 \uC911\uAC04 \uD655\uB960\uB85C \uD68C\uD53C\uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 0c99c08fb2785eb4da2a6de83d8a7e03, type: 3}
     item_Attributes: []
-  - item_num: 1
+  - item_num: 5
     item_class: 0
-    item_name: Wind
-    item_dmg: 0
-    item_text: "\uC0C1\uB300\uC758 \uC774\uB3D9\uC18D\uB3C4\uB97C \uAC10\uC18C\uC2DC\uD0A8\uB2E4."
-    item_sprite: {fileID: 21300000, guid: 39d08c6fe3f2f8e4d9e3eff5f27d4fe7, type: 3}
-    item_Attributes: []
-  - item_num: 3
-    item_class: 0
-    item_name: Apple
-    item_dmg: 0
-    item_text: "\uC790\uC2E0\uC758 \uD3EC\uCEE4 \uCE74\uB4DC\uB97C \uC77C\uC815 \uC2DC\uAC04\uB9C8\uB2E4
-      \uC18C\uB7C9 \uD68C\uBCF5\uD55C\uB2E4."
-    item_sprite: {fileID: 21300000, guid: b6c7d27f0d59fc044b552da7076847a6, type: 3}
+    item_name: Coin
+    item_dmg: 20
+    item_text: "\uC77C\uC815 \uC2DC\uAC04 \uB9C8\uB2E4 \uB0AE\uC740 \uD655\uB960\uB85C
+      \uB3C8\uC744 \uD68D\uB4DD \uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: c29162d11d03499498205196908712a5, type: 3}
     item_Attributes: []
   - item_num: 3
-    item_class: 0
-    item_name: Apple
-    item_dmg: 0
-    item_text: "\uC790\uC2E0\uC758 \uD3EC\uCEE4 \uCE74\uB4DC\uB97C \uC77C\uC815 \uC2DC\uAC04\uB9C8\uB2E4
-      \uC18C\uB7C9 \uD68C\uBCF5\uD55C\uB2E4."
-    item_sprite: {fileID: 21300000, guid: b6c7d27f0d59fc044b552da7076847a6, type: 3}
-    item_Attributes: []
-  - item_num: 1
-    item_class: 0
-    item_name: Wind
-    item_dmg: 0
-    item_text: "\uC0C1\uB300\uC758 \uC774\uB3D9\uC18D\uB3C4\uB97C \uAC10\uC18C\uC2DC\uD0A8\uB2E4."
-    item_sprite: {fileID: 21300000, guid: 39d08c6fe3f2f8e4d9e3eff5f27d4fe7, type: 3}
-    item_Attributes: []
-  - item_num: 0
-    item_class: 0
-    item_name: Blood
-    item_dmg: 5
-    item_text: "\uC9C0\uC18D\uC801\uC73C\uB85C \uC0C1\uB300\uC758 \uCCB4\uB825\uC744
-      \uB2EC\uAC8C\uD55C\uB2E4."
-    item_sprite: {fileID: 21300000, guid: 830168f764471444d8a47b35247f811c, type: 3}
-    item_Attributes: []
-  - item_num: 2
     item_class: 0
     item_name: Mushroom
     item_dmg: 0
@@ -123,21 +85,61 @@ MonoBehaviour:
     item_Attributes: []
   - item_num: 4
     item_class: 0
-    item_name: Coin
-    item_dmg: 0
-    item_text: "\uC77C\uC815 \uC2DC\uAC04 \uB9C8\uB2E4 \uB0AE\uC740 \uD655\uB960\uB85C
-      \uB3C8\uC744 \uD68D\uB4DD \uD55C\uB2E4."
-    item_sprite: {fileID: 21300000, guid: c29162d11d03499498205196908712a5, type: 3}
-    item_Attributes: []
-  - item_num: 3
-    item_class: 0
     item_name: Apple
     item_dmg: 0
     item_text: "\uC790\uC2E0\uC758 \uD3EC\uCEE4 \uCE74\uB4DC\uB97C \uC77C\uC815 \uC2DC\uAC04\uB9C8\uB2E4
       \uC18C\uB7C9 \uD68C\uBCF5\uD55C\uB2E4."
     item_sprite: {fileID: 21300000, guid: b6c7d27f0d59fc044b552da7076847a6, type: 3}
     item_Attributes: []
-  - item_num: 2
+  - item_num: 6
+    item_class: 1
+    item_name: Machete
+    item_dmg: 20
+    item_text: "\uC801\uC774 \uAE30\uC9C0\uB97C \uACF5\uACA9\uD560\uB54C \uC77C\uC815\uD55C
+      \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
+    item_sprite: {fileID: 21300000, guid: a1c4e5c36c7ec7e42ae3cbadc63fb92a, type: 3}
+    item_Attributes: []
+  - item_num: 5
+    item_class: 0
+    item_name: Coin
+    item_dmg: 20
+    item_text: "\uC77C\uC815 \uC2DC\uAC04 \uB9C8\uB2E4 \uB0AE\uC740 \uD655\uB960\uB85C
+      \uB3C8\uC744 \uD68D\uB4DD \uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: c29162d11d03499498205196908712a5, type: 3}
+    item_Attributes: []
+  - item_num: 6
+    item_class: 1
+    item_name: Machete
+    item_dmg: 20
+    item_text: "\uC801\uC774 \uAE30\uC9C0\uB97C \uACF5\uACA9\uD560\uB54C \uC77C\uC815\uD55C
+      \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
+    item_sprite: {fileID: 21300000, guid: a1c4e5c36c7ec7e42ae3cbadc63fb92a, type: 3}
+    item_Attributes: []
+  - item_num: 1
+    item_class: 0
+    item_name: Blood
+    item_dmg: 5
+    item_text: "\uC9C0\uC18D\uC801\uC73C\uB85C \uC0C1\uB300\uC758 \uCCB4\uB825\uC744
+      \uB2EC\uAC8C\uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 830168f764471444d8a47b35247f811c, type: 3}
+    item_Attributes: []
+  - item_num: 1
+    item_class: 0
+    item_name: Blood
+    item_dmg: 5
+    item_text: "\uC9C0\uC18D\uC801\uC73C\uB85C \uC0C1\uB300\uC758 \uCCB4\uB825\uC744
+      \uB2EC\uAC8C\uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 830168f764471444d8a47b35247f811c, type: 3}
+    item_Attributes: []
+  - item_num: 5
+    item_class: 0
+    item_name: Coin
+    item_dmg: 20
+    item_text: "\uC77C\uC815 \uC2DC\uAC04 \uB9C8\uB2E4 \uB0AE\uC740 \uD655\uB960\uB85C
+      \uB3C8\uC744 \uD68D\uB4DD \uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: c29162d11d03499498205196908712a5, type: 3}
+    item_Attributes: []
+  - item_num: 3
     item_class: 0
     item_name: Mushroom
     item_dmg: 0
