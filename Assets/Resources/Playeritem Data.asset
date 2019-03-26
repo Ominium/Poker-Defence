@@ -1,0 +1,147 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f348e0ef6468e94e98946f498c391fc, type: 3}
+  m_Name: Playeritem Data
+  m_EditorClassIdentifier: 
+  itemList:
+  - item_num: 1
+    item_class: 0
+    item_name: Wind
+    item_dmg: 0
+    item_text: "\uC0C1\uB300\uC758 \uC774\uB3D9\uC18D\uB3C4\uB97C \uAC10\uC18C\uC2DC\uD0A8\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 39d08c6fe3f2f8e4d9e3eff5f27d4fe7, type: 3}
+    item_Attributes: []
+  - item_num: 3
+    item_class: 0
+    item_name: Apple
+    item_dmg: 0
+    item_text: "\uC790\uC2E0\uC758 \uD3EC\uCEE4 \uCE74\uB4DC\uB97C \uC77C\uC815 \uC2DC\uAC04\uB9C8\uB2E4
+      \uC18C\uB7C9 \uD68C\uBCF5\uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: b6c7d27f0d59fc044b552da7076847a6, type: 3}
+    item_Attributes: []
+  - item_num: 2
+    item_class: 0
+    item_name: Mushroom
+    item_dmg: 0
+    item_text: "\uC790\uC2E0\uC758 \uCCB4\uB825\uC744 \uC77C\uC815 \uC2DC\uAC04\uB9C8\uB2E4
+      \uC18C\uB7C9 \uD68C\uBCF5\uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 421750e670078b94eaaf7932f9c6fc1a, type: 3}
+    item_Attributes: []
+  - item_num: 3
+    item_class: 0
+    item_name: Apple
+    item_dmg: 0
+    item_text: "\uC790\uC2E0\uC758 \uD3EC\uCEE4 \uCE74\uB4DC\uB97C \uC77C\uC815 \uC2DC\uAC04\uB9C8\uB2E4
+      \uC18C\uB7C9 \uD68C\uBCF5\uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: b6c7d27f0d59fc044b552da7076847a6, type: 3}
+    item_Attributes: []
+  - item_num: 4
+    item_class: 0
+    item_name: Coin
+    item_dmg: 0
+    item_text: "\uC77C\uC815 \uC2DC\uAC04 \uB9C8\uB2E4 \uB0AE\uC740 \uD655\uB960\uB85C
+      \uB3C8\uC744 \uD68D\uB4DD \uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: c29162d11d03499498205196908712a5, type: 3}
+    item_Attributes: []
+  - item_num: 4
+    item_class: 0
+    item_name: Coin
+    item_dmg: 0
+    item_text: "\uC77C\uC815 \uC2DC\uAC04 \uB9C8\uB2E4 \uB0AE\uC740 \uD655\uB960\uB85C
+      \uB3C8\uC744 \uD68D\uB4DD \uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: c29162d11d03499498205196908712a5, type: 3}
+    item_Attributes: []
+  - item_num: 0
+    item_class: 0
+    item_name: Blood
+    item_dmg: 5
+    item_text: "\uC9C0\uC18D\uC801\uC73C\uB85C \uC0C1\uB300\uC758 \uCCB4\uB825\uC744
+      \uB2EC\uAC8C\uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 830168f764471444d8a47b35247f811c, type: 3}
+    item_Attributes: []
+  - item_num: 1
+    item_class: 0
+    item_name: Wind
+    item_dmg: 0
+    item_text: "\uC0C1\uB300\uC758 \uC774\uB3D9\uC18D\uB3C4\uB97C \uAC10\uC18C\uC2DC\uD0A8\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 39d08c6fe3f2f8e4d9e3eff5f27d4fe7, type: 3}
+    item_Attributes: []
+  - item_num: 1
+    item_class: 0
+    item_name: Wind
+    item_dmg: 0
+    item_text: "\uC0C1\uB300\uC758 \uC774\uB3D9\uC18D\uB3C4\uB97C \uAC10\uC18C\uC2DC\uD0A8\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 39d08c6fe3f2f8e4d9e3eff5f27d4fe7, type: 3}
+    item_Attributes: []
+  - item_num: 3
+    item_class: 0
+    item_name: Apple
+    item_dmg: 0
+    item_text: "\uC790\uC2E0\uC758 \uD3EC\uCEE4 \uCE74\uB4DC\uB97C \uC77C\uC815 \uC2DC\uAC04\uB9C8\uB2E4
+      \uC18C\uB7C9 \uD68C\uBCF5\uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: b6c7d27f0d59fc044b552da7076847a6, type: 3}
+    item_Attributes: []
+  - item_num: 3
+    item_class: 0
+    item_name: Apple
+    item_dmg: 0
+    item_text: "\uC790\uC2E0\uC758 \uD3EC\uCEE4 \uCE74\uB4DC\uB97C \uC77C\uC815 \uC2DC\uAC04\uB9C8\uB2E4
+      \uC18C\uB7C9 \uD68C\uBCF5\uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: b6c7d27f0d59fc044b552da7076847a6, type: 3}
+    item_Attributes: []
+  - item_num: 1
+    item_class: 0
+    item_name: Wind
+    item_dmg: 0
+    item_text: "\uC0C1\uB300\uC758 \uC774\uB3D9\uC18D\uB3C4\uB97C \uAC10\uC18C\uC2DC\uD0A8\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 39d08c6fe3f2f8e4d9e3eff5f27d4fe7, type: 3}
+    item_Attributes: []
+  - item_num: 0
+    item_class: 0
+    item_name: Blood
+    item_dmg: 5
+    item_text: "\uC9C0\uC18D\uC801\uC73C\uB85C \uC0C1\uB300\uC758 \uCCB4\uB825\uC744
+      \uB2EC\uAC8C\uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 830168f764471444d8a47b35247f811c, type: 3}
+    item_Attributes: []
+  - item_num: 2
+    item_class: 0
+    item_name: Mushroom
+    item_dmg: 0
+    item_text: "\uC790\uC2E0\uC758 \uCCB4\uB825\uC744 \uC77C\uC815 \uC2DC\uAC04\uB9C8\uB2E4
+      \uC18C\uB7C9 \uD68C\uBCF5\uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 421750e670078b94eaaf7932f9c6fc1a, type: 3}
+    item_Attributes: []
+  - item_num: 4
+    item_class: 0
+    item_name: Coin
+    item_dmg: 0
+    item_text: "\uC77C\uC815 \uC2DC\uAC04 \uB9C8\uB2E4 \uB0AE\uC740 \uD655\uB960\uB85C
+      \uB3C8\uC744 \uD68D\uB4DD \uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: c29162d11d03499498205196908712a5, type: 3}
+    item_Attributes: []
+  - item_num: 3
+    item_class: 0
+    item_name: Apple
+    item_dmg: 0
+    item_text: "\uC790\uC2E0\uC758 \uD3EC\uCEE4 \uCE74\uB4DC\uB97C \uC77C\uC815 \uC2DC\uAC04\uB9C8\uB2E4
+      \uC18C\uB7C9 \uD68C\uBCF5\uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: b6c7d27f0d59fc044b552da7076847a6, type: 3}
+    item_Attributes: []
+  - item_num: 2
+    item_class: 0
+    item_name: Mushroom
+    item_dmg: 0
+    item_text: "\uC790\uC2E0\uC758 \uCCB4\uB825\uC744 \uC77C\uC815 \uC2DC\uAC04\uB9C8\uB2E4
+      \uC18C\uB7C9 \uD68C\uBCF5\uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 421750e670078b94eaaf7932f9c6fc1a, type: 3}
+    item_Attributes: []

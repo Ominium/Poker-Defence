@@ -67,8 +67,13 @@
      <Compile Include="Assets\Script\EnemyCtrl.cs" />
      <Compile Include="Assets\Script\Enemys.cs" />
      <Compile Include="Assets\Script\FokerManager.cs" />
+     <Compile Include="Assets\Script\GachaManager.cs" />
      <Compile Include="Assets\Script\GameUI.cs" />
-     <Compile Include="Assets\Script\Item.cs" />
+     <Compile Include="Assets\Script\InventoryManager.cs" />
+     <Compile Include="Assets\Script\ItemAttribute.cs" />
+     <Compile Include="Assets\Script\ItemAttributeList.cs" />
+     <Compile Include="Assets\Script\ItemDataBaseList.cs" />
+     <Compile Include="Assets\Script\Items.cs" />
      <Compile Include="Assets\Script\ItemUI.cs" />
      <Compile Include="Assets\Script\Knight.cs" />
      <Compile Include="Assets\Script\Light.cs" />
@@ -76,10 +81,12 @@
      <Compile Include="Assets\Script\Miner.cs" />
      <Compile Include="Assets\Script\Normal.cs" />
      <Compile Include="Assets\Script\PCctrl.cs" />
+     <Compile Include="Assets\Script\PlayeritemData.cs" />
      <Compile Include="Assets\Script\PlayerUnit.cs" />
      <Compile Include="Assets\Script\Shif.cs" />
      <Compile Include="Assets\Script\Smith.cs" />
      <Compile Include="Assets\Script\StartUI.cs" />
+     <Compile Include="Assets\Script\TestCount.cs" />
      <Compile Include="Assets\Script\Wizard.cs" />
      <None Include="Assets\ARISAN\100 Alchemy item icons-free\item_name.txt" />
      <None Include="Assets\BowAndArrow\Readme.txt" />

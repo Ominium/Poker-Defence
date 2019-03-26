@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d341b7bfea7967468f97507113d23f2, type: 3}
+  m_Name: BlueprintDatabase
+  m_EditorClassIdentifier: 
+  itemList:
+  - item_num: 0
+    item_class: 0
+    item_name: Blood
+    item_dmg: 5
+    item_text: "\uC9C0\uC18D\uC801\uC73C\uB85C \uC0C1\uB300\uC758 \uCCB4\uB825\uC744
+      \uB2EC\uAC8C\uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 830168f764471444d8a47b35247f811c, type: 3}
+    item_Attributes: []
+  - item_num: 1
+    item_class: 0
+    item_name: Wind
+    item_dmg: 0
+    item_text: "\uC0C1\uB300\uC758 \uC774\uB3D9\uC18D\uB3C4\uB97C \uAC10\uC18C\uC2DC\uD0A8\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 39d08c6fe3f2f8e4d9e3eff5f27d4fe7, type: 3}
+    item_Attributes: []
+  - item_num: 2
+    item_class: 0
+    item_name: Mushroom
+    item_dmg: 0
+    item_text: "\uC790\uC2E0\uC758 \uCCB4\uB825\uC744 \uC77C\uC815 \uC2DC\uAC04\uB9C8\uB2E4
+      \uC18C\uB7C9 \uD68C\uBCF5\uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 421750e670078b94eaaf7932f9c6fc1a, type: 3}
+    item_Attributes: []
+  - item_num: 3
+    item_class: 0
+    item_name: Apple
+    item_dmg: 0
+    item_text: "\uC790\uC2E0\uC758 \uD3EC\uCEE4 \uCE74\uB4DC\uB97C \uC77C\uC815 \uC2DC\uAC04\uB9C8\uB2E4
+      \uC18C\uB7C9 \uD68C\uBCF5\uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: b6c7d27f0d59fc044b552da7076847a6, type: 3}
+    item_Attributes: []
+  - item_num: 4
+    item_class: 0
+    item_name: Coin
+    item_dmg: 0
+    item_text: "\uC77C\uC815 \uC2DC\uAC04 \uB9C8\uB2E4 \uB0AE\uC740 \uD655\uB960\uB85C
+      \uB3C8\uC744 \uD68D\uB4DD \uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: c29162d11d03499498205196908712a5, type: 3}
+    item_Attributes: []
+  - item_num: 5
+    item_class: 1
+    item_name: Machete
+    item_dmg: 20
+    item_text: "\uC801\uC774 \uAE30\uC9C0\uB97C \uACF5\uACA9\uD560\uB54C \uC77C\uC815\uD55C
+      \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
+    item_sprite: {fileID: 21300000, guid: a1c4e5c36c7ec7e42ae3cbadc63fb92a, type: 3}
+    item_Attributes: []
+  - item_num: 6
+    item_class: 1
+    item_name: Three Clover
+    item_dmg: 0
+    item_text: "\uC801\uC758 \uACF5\uACA9\uC744 \uC911\uAC04 \uD655\uB960\uB85C \uD68C\uD53C\uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 0c99c08fb2785eb4da2a6de83d8a7e03, type: 3}
+    item_Attributes: []
+  - item_num: 7
+    item_class: 1
+    item_name: Bomb
+    item_dmg: 50
+    item_text: "\uC77C\uC815 \uC2DC\uAC04\uB9C8\uB2E4  \uC801\uB4E4\uC5D0\uAC8C \uC911\uAC04
+      \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 1f4a0aae86ebe3a4abe7d92019f422cb, type: 3}
+    item_Attributes: []
+  - item_num: 8
+    item_class: 1
+    item_name: Book
+    item_dmg: 0
+    item_text: "\uD328\uB97C \uBC1B\uB294 \uC18D\uB3C4\uAC00 \uC99D\uAC00\uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: d98957d25635e1844914d42e7a142b29, type: 3}
+    item_Attributes: []
+  - item_num: 9
+    item_class: 1
+    item_name: Beer
+    item_dmg: 0
+    item_text: "\uC790\uC2E0\uC758 \uCCB4\uB825\uC744 \uC77C\uC815 \uC2DC\uAC04\uB9C8\uB2E4
+      \uC911\uB7C9 \uD68C\uBCF5\uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: fe9be467643906042b1db16df2a44148, type: 3}
+    item_Attributes: []
+  - item_num: 10
+    item_class: 1
+    item_name: Ring
+    item_dmg: 0
+    item_text: "\uAE30\uC9C0\uC758 \uBC29\uC5B4\uB825\uC744 \uC99D\uAC00 \uC2DC\uD0A8\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 928b0f07fdd4e374cb94424a91488a53, type: 3}
+    item_Attributes: []
+  - item_num: 11
+    item_class: 1
+    item_name: Diamond
+    item_dmg: 0
+    item_text: "\uD68D\uB4DD \uD588\uC744 \uB54C \uC989\uC2DC \uB3C8\uC744 \uB300\uB7C9
+      \uD68D\uB4DD \uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 8727e7dc0cc99c245922ec614e2e826d, type: 3}
+    item_Attributes: []
+  - item_num: 12
+    item_class: 2
+    item_name: Belt
+    item_dmg: 0
+    item_text: "\uBC1B\uB294 \uD3EC\uCEE4 \uCD5C\uB300 \uC7A5\uC218\uB97C 1\uC99D\uAC00
+      \uC2DC\uD0A8\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 183ad819c4751ff4b9fde52018778b0c, type: 3}
+    item_Attributes: []
+  - item_num: 13
+    item_class: 2
+    item_name: Life
+    item_dmg: 0
+    item_text: "\uD3EC\uCEE4 \uACF5\uACA9\uC758 \uC77C\uC815 \uB370\uBBF8\uC9C0\uB97C
+      \uD761\uD608\uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: e8327ed7ecf84e34e8d5bb8a37d72618, type: 3}
+    item_Attributes: []
+  - item_num: 0
+    item_class: 2
+    item_name: Electric
+    item_dmg: 100
+    item_text: "\uC77C\uC815 \uC2DC\uAC04\uB9C8\uB2E4 \uB192\uC740 \uD655\uB960\uB85C
+      \uB192\uC740 \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 8c5b79707e8ddf9449a3f42ede0a06f3, type: 3}
+    item_Attributes: []
+  - item_num: 15
+    item_class: 2
+    item_name: Rope
+    item_dmg: 0
+    item_text: "\uC77C\uC815 \uD655\uB960\uB85C \uC0C1\uB300 \uC720\uB2DB\uB4E4\uC744
+      \uBA48\uCD98\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 83a0213d652a6b749a8403b8e6d421b4, type: 3}
+    item_Attributes: []
+  - item_num: 16
+    item_class: 2
+    item_name: Darkness
+    item_dmg: 50
+    item_text: "\uC0C1\uB300\uC758 \uACF5\uACA9\uC744 \uBC18\uACA9\uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 7727d08cc96a0634f870fb482417b37e, type: 3}
+    item_Attributes: []
+  - item_num: 17
+    item_class: 3
+    item_name: Four Clover
+    item_dmg: 0
+    item_text: "\uC0C1\uB300\uC758 \uACF5\uACA9\uC744 \uB192\uC740 \uD655\uB960\uB85C
+      \uD68C\uD53C\uD55C\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 7fbd9ab32b329464a8c464e9fea41ded, type: 3}
+    item_Attributes: []
+  - item_num: 18
+    item_class: 3
+    item_name: Scroll
+    item_dmg: 0
+    item_text: "\uBC1B\uB294 \uD3EC\uCEE4 \uC7A5\uC218\uB97C 2\uB298\uB9B0\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 1211edc30b3a39d428dda9695c953aec, type: 3}
+    item_Attributes: []
+  - item_num: 19
+    item_class: 3
+    item_name: Time
+    item_dmg: 0
+    item_text: "\uC77C\uC815 \uD655\uB960\uB85C \uC0C1\uB300\uB97C \uC989\uC0AC \uC2DC\uD0A8\uB2E4."
+    item_sprite: {fileID: 21300000, guid: 825eb3b41d8de03408f109667a88715a, type: 3}
+    item_Attributes: []
