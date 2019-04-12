@@ -7,6 +7,9 @@ public class StartUI : MonoBehaviour
 
     public void NewGameButton()
     {
+        PlayerPrefs.SetInt("Uitem1", 0);
+        PlayerPrefs.SetInt("Uitem2", 0);
+        PlayerPrefs.SetInt("Uitem3", 0);
         PlayerPrefs.SetInt("Round", 0);
         PlayerPrefs.SetInt("Gold", 0);
         PlayerPrefs.SetInt("UP0", 0);

@@ -11,39 +11,54 @@ public class GachaManager : MonoBehaviour
     Items item;
     public void GachaButton(int i)
     {
-       // if (GameUI.gold > i * 100)
-      //  {
-            for (int m = 0; m < i; m++)
+        // if (GameUI.gold > i * 100)
+        //  {
+        for (int m = 0; m < i; m++)
+        {
+
+
+            int random;
+            random = Random.Range(0, 100);
+            if (random < 70)
             {
-
-
-                int random;
-                random = Random.Range(0, 100);
-                if (random < 70)
+                int random2;
+                random2 = Random.Range(1, 6);
+                item = baseList.itemList[random2];
+                if (inventory.itemList.Count < 20)
                 {
-                    int random2;
-                    random2 = Random.Range(1, 6);
-                    item = baseList.itemList[random2];
-                    if (inventory.itemList.Count < 20)
+                    for (int k = 0; k < inventory.itemList.Count; k++)
                     {
-                        inventory.itemList.Add(item);
+                        if (inventory.itemList[k].item_num == 0)
+                        {
+                            inventory.itemList[k] = item;
+                            break;
+                        }
                     }
                 }
-                if (random >= 70)
-                {
-                    int random2;
-                    random2 = Random.Range(6, 10);
-                    item = baseList.itemList[random2];
-                    if (inventory.itemList.Count < 20)
-                    {
-                        inventory.itemList.Add(item);
-                    }
-                }
-               // GameUI.gold = i * 100;
-              //  PlayerPrefs.SetInt("Gold", GameUI.gold);
             }
-    //    }
+            if (random >= 70)
+            {
+                int random2;
+                random2 = Random.Range(6, 10);
+                item = baseList.itemList[random2];
+                if (inventory.itemList.Count < 20)
+                {
+                    for (int k = 0; k < inventory.itemList.Count; k++)
+                    {
+                        if (inventory.itemList[k].item_num == 0)
+                        {
+                            inventory.itemList[k] = item;
+                            break;
+                        }
+                    }
+                }
+            }
+            GameUI.gold = i * 100;
+            PlayerPrefs.SetInt("Gold", GameUI.gold);
+        }
     }
+    //    }
+    
     public void BackMain()
     {
         SceneManager.LoadScene(1);

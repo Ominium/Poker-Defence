@@ -23,7 +23,7 @@ public class ItemUI : MonoBehaviour
         {
             if (image.sprite == inventory.Playeritems[i].item_sprite&&image.sprite!=inventory.itemlist.itemList[0].item_sprite)
             {
-                inventory.Playeritems.RemoveAt(i);
+                inventory.Playeritems[i]=inventory.itemlist.itemList[0];
                 buttons[Save].image.sprite = null;
                 inventory.invens[Save].image.sprite = null;
                 image.sprite = null;
