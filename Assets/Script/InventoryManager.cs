@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.IO;
 
 
 public class InventoryManager : MonoBehaviour
@@ -16,6 +15,16 @@ public class InventoryManager : MonoBehaviour
     public List<Items> UsePlayeritems = new List<Items>();
     bool getgold = false;
     int[] Uitemint = new int[3];
+    float time1 = 0;
+    float time2 = 0;
+    float time3 = 0;
+    float time4= 0;
+    float time5 = 0;
+    float time6 = 0;
+    float time7 = 0;
+    float time8 = 0;
+    float time9 = 0;
+    
     bool[] itemuse = new bool[21];
     // Start is called before the first frame update
     public  void UseUpdate()
@@ -34,10 +43,7 @@ public class InventoryManager : MonoBehaviour
             useinvens[i].image.sprite = UsePlayeritems[i].item_sprite;
         }
         ItemSet();
-        for(int i = 0; i < itemuse.Length; i++)
-        {
-            Debug.Log(itemuse[i] + i.ToString());
-        }  
+
     }
     void ItemSet()
     {
@@ -119,65 +125,132 @@ public class InventoryManager : MonoBehaviour
         }
       
         UseUpdate();
-        gameObject.SetActive(false);
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
     }
     public void useinvensClick(int Button)
     {
         if (UsePlayeritems[Button] != itemlist.itemList[0])
         {
             UsePlayeritems[Button] = itemlist.itemList[0];
-            UseUpdate();
+           
         }
+        UseUpdate();
     }
     void Update()
     {
-       
+        ItemResult();
     }
     
 
     void ItemResult()
     {
         
+        
         if (itemuse[1])
         {
-
+           
+            time1 += Time.deltaTime;
+            if (time1 > 1.5f)
+            {
+                GameObject[] EnemyGame = GameObject.FindGameObjectsWithTag("Enemy");
+                for (int i = 0; i < EnemyGame.Length; i++)
+                {
+                    EnemyGame[i].GetComponent<Enemys>().hp -= 5;
+                }
+                time1 = 0;
+            }
  
         }
         if (itemuse[2])
         {
-
+            
+            GameObject[] EnemyGame = GameObject.FindGameObjectsWithTag("Enemy");
+            for (int i = 0; i < EnemyGame.Length; i++)
+            {
+                EnemyGame[i].GetComponent<Enemys>().Changemovs = (-1.0f);
+            }
         }
         if (itemuse[3])
         {
-
+            
+            time2 += Time.deltaTime;
+            if (time2 > 3f)
+            {
+                if (PCctrl.hp <= PCctrl.mhp)
+                {
+                    PCctrl.hp += 5;
+                }
+                time2 = 0;
+            }
         }
         if (itemuse[4])
         {
-
+            float time = 0;
+            time += Time.deltaTime;
+            if (time > 3f)
+            {
+                FokerManager.CardCount3--;
+                time = 0;
+            }
         }
         if (itemuse[5])
         {
+            
+            time3 += Time.deltaTime;
+            if (time3 > 3f)
+            {
+                int rand;
+                rand = Random.Range(0, 15);
+                GameUI.gold += rand;
+                time3 = 0;
+            }
 
         }
         if (itemuse[6])
         {
-
+            GameObject[] EnemyGame = GameObject.FindGameObjectsWithTag("Enemy");
+            for(int i=0; i < EnemyGame.Length; i++)
+            {
+                if (EnemyGame[i].GetComponent<Enemys>().Hiting == true)
+                {
+                    EnemyGame[i].GetComponent<Enemys>().hp -= 5;
+                }
+            }
         }
         if (itemuse[7])
         {
-
+            PCctrl.dodgeper = 0.25f;
         }
         if (itemuse[8])
         {
-
+            
+            time4 += Time.deltaTime;
+            if (time4 > 3.5f)
+            {
+                GameObject[] EnemyGame = GameObject.FindGameObjectsWithTag("Enemy");
+                for (int i = 0; i < EnemyGame.Length; i++)
+                {
+                    EnemyGame[i].GetComponent<Enemys>().hp -= 30;
+                }
+                time4 = 0;
+            }
         }
         if (itemuse[9])
         {
-
+            FokerManager.Drewspeed = 1.2f;
         }
         if (itemuse[10])
         {
-
+            
+            time5 += Time.deltaTime;
+            if (time5 > 3f)
+            {
+                if (PCctrl.hp <= PCctrl.mhp)
+                {
+                    PCctrl.hp += 8;
+                }
+                time5 = 0;
+            }
         }
         if (itemuse[11])
         {
@@ -194,23 +267,71 @@ public class InventoryManager : MonoBehaviour
         }
         if (itemuse[14])
         {
+            if (FokerManager.Pokering)
+            {
+                GameObject[] EnemyGame = GameObject.FindGameObjectsWithTag("Enemy");
+                for (int i = 0; i < EnemyGame.Length; i++)
+                {
+                    if (EnemyGame[i].GetComponent<Enemys>().Hoting)
+                    {
+                        PCctrl.hp += (int)FokerManager.PokerDmg;
+                    }
+                }
 
+            }
         }
         if (itemuse[15])
         {
-            
+           
+            time6 += Time.deltaTime;
+            if (time6 > 2.0f)
+            {
+                GameObject[] EnemyGame = GameObject.FindGameObjectsWithTag("Enemy");
+                for (int i = 0; i < EnemyGame.Length; i++)
+                {
+                    EnemyGame[i].GetComponent<Enemys>().hp -= 50;
+                }
+                time6 = 0;
+            }
         }
         if (itemuse[16])
         {
-
+           
+            float Orimovs = 0;
+            time7 += Time.deltaTime;
+            time8 += Time.deltaTime;
+            GameObject[] EnemyGame = GameObject.FindGameObjectsWithTag("Enemy");
+            if (time8 > 1f) {
+                for (int i = 0; i < EnemyGame.Length; i++)
+                {
+                    Orimovs = EnemyGame[i].GetComponent<Enemys>().movs;
+                    EnemyGame[i].GetComponent<Enemys>().movs = 0;
+                }
+                time8 = 0;
+            }
+            if (time7 > 2.0f)
+            {
+                for (int i = 0; i < EnemyGame.Length; i++)
+                {
+                    EnemyGame[i].GetComponent<Enemys>().movs = Orimovs;
+                }
+                time7 = 0;
+            }
         }
         if (itemuse[17])
         {
-
+            GameObject[] EnemyGame = GameObject.FindGameObjectsWithTag("Enemy");
+            for (int i = 0; i < EnemyGame.Length; i++)
+            {
+                if (EnemyGame[i].GetComponent<Enemys>().Hiting)
+                {
+                    EnemyGame[i].GetComponent<Enemys>().hp -= EnemyGame[i].GetComponent<Enemys>().dmg;
+                }
+            }
         }
         if (itemuse[18])
         {
-
+            PCctrl.dodgeper = 0.5f;
         }
         if (itemuse[19])
         {
@@ -218,7 +339,34 @@ public class InventoryManager : MonoBehaviour
         }
         if (itemuse[20])
         {
-
+            
+            int rand = 0;
+            rand = Random.Range(0, 10);
+            time9 += Time.deltaTime;
+            if (time9 > 2.0f)
+            {
+                GameObject[] EnemyGame = GameObject.FindGameObjectsWithTag("Enemy");
+                if (EnemyGame.Length > 0)
+                {
+                    if (rand > 5)
+                    {
+                        EnemyGame[0].GetComponent<Enemys>().hp = 0;
+                    }
+                }
+                time9 = 0;
+            }
+        }
+        if (!itemuse[2])
+        {
+            GameObject[] EnemyGame = GameObject.FindGameObjectsWithTag("Enemy");
+            for (int i = 0; i < EnemyGame.Length; i++)
+            {
+                EnemyGame[i].GetComponent<Enemys>().Changemovs = 0f;
+            }
+        }
+        if (!itemuse[7] && !itemuse[18])
+        {
+            PCctrl.dodgeper = 0;
         }
         if (!itemuse[19] && !itemuse[11] && !itemuse[13])
         {

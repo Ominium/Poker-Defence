@@ -664,6 +664,8 @@ MonoBehaviour:
   damaged: 0
   tr: {fileID: 4000486200776288}
   movs: 1.5
+  Changemovs: 0
+  Realmovs: 0
   dmg: 25
   Hiting: 0
   Hoting: 0
@@ -671,8 +673,10 @@ MonoBehaviour:
   dms: 5
   vec: {x: -1, y: 0}
   isDie: 0
+  a: {fileID: 0}
   text: {fileID: 5067737499050093074}
   hpbar: {fileID: 770231539375492903}
+  Fire: {fileID: 7159721999191112682, guid: c8f9e62d496cb2649b005649350f6994, type: 3}
 --- !u!1 &1391138960742702
 GameObject:
   m_ObjectHideFlags: 0

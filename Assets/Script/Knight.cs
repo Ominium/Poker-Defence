@@ -7,6 +7,8 @@ public class Knight : Enemys
 {
     public Text text;
     public Image hpbar;
+    bool Attacking = false;
+    public Transform Weapontr;
     void Awake()
     {
         hp = 300 + (EnemyCtrl.round * 10);
@@ -24,7 +26,30 @@ public class Knight : Enemys
     {
         base.Update();
         StartCoroutine(ShowDamage());
+        if (Hiting & !Attacking)
+        {
+            StartCoroutine(Attack());
+        }
+    }
+    IEnumerator Attack()
+    {
+        Attacking = true;
 
+        while (Weapontr.localPosition.x > -0.6)
+        {
+            Weapontr.transform.Translate(-0.04f, 0, 0);
+            yield return null;
+
+        }
+        PCctrl.hp -= dmg;
+        while (Weapontr.localPosition.x < 0)
+        {
+            Weapontr.transform.Translate(0.04f, 0, 0);
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(dms - 0.8f);
+        Attacking = false;
     }
     IEnumerator ShowDamage()
     {

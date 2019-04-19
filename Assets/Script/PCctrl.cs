@@ -9,6 +9,8 @@ public class PCctrl : MonoBehaviour
     public Text hptext;
     public GameObject tr;
     Transform start;
+    public static float dodgeper = 0.0f;
+    bool dodge = false;
     public static int hp = 100;
     public static int mhp;
     public int lhp;
@@ -24,13 +26,23 @@ public class PCctrl : MonoBehaviour
         mhp = hp;
         lhp = hp;
     }
+
     void Hot()
     {
         if (lhp != hp)
         {
-            damaged = lhp - hp;
-            Hoting = true;
-            lhp = hp;
+            float rand = Random.Range(0, 1);
+            if (rand>dodgeper)
+            {
+                damaged = lhp - hp;
+                Hoting = true;
+                lhp = hp;
+            }
+            if (rand < dodgeper)
+            {
+                dodge = true;
+                hp = lhp;
+            }
         }
     }
     IEnumerator ShowDamage()

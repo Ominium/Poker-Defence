@@ -10,6 +10,8 @@ public class Enemys : MonoBehaviour
     public int damaged;
     public Transform tr;
     public float movs;
+    public float Changemovs = 0;
+    public float Realmovs;
     public int dmg;
     public bool Hiting = false;
     public bool Hoting = false;
@@ -17,16 +19,18 @@ public class Enemys : MonoBehaviour
     public float dms;
     public Vector2 vec;
     public bool isDie = false;
-    PCctrl a;
+
+    public PCctrl a;
     public void Start(){
         tr = GetComponent<Transform>();
         a = GameObject.FindObjectOfType<PCctrl>();
     }
     public void Update()    
     {
+        Realmovs = movs + Changemovs;
         if (Mathf.Abs(gameObject.transform.position.x - a.transform.position.x) < dis)
         {
-            StartCoroutine(Hit(dmg, dms));
+            StartCoroutine(Hit(dms));
         }
         else
         {
@@ -59,7 +63,8 @@ public class Enemys : MonoBehaviour
             lhp = hp;
         }
     }
-   public IEnumerator Hit(int dmg, float dms)
+ 
+   public IEnumerator Hit( float dms)
     {
         
 
@@ -68,8 +73,9 @@ public class Enemys : MonoBehaviour
         {
             while (PCctrl.hp > 0)
             {
-                PCctrl.hp -= dmg- PCctrl.Ammor;
+                
                 Hiting = true;
+                
                 yield return new WaitForSeconds(dms);
                 Hiting = false;
                
@@ -92,7 +98,7 @@ public class Enemys : MonoBehaviour
     protected virtual void Moving()
     {
             Vector3 distance = new Vector3(vec.x, vec.y, 0);
-            tr.Translate(new Vector3(distance.x, distance.y, 0) * movs * Time.deltaTime, Space.Self);
+            tr.Translate(new Vector3(distance.x, distance.y, 0) * Realmovs * Time.deltaTime, Space.Self);
             tr.transform.position = new Vector3(tr.transform.position.x, tr.transform.position.y, 0);    
     } 
 }

@@ -261,6 +261,7 @@ MonoBehaviour:
   damaged: 0
   tr: {fileID: 4567295203670988}
   movs: 2.2
+  Changemovs: 0
   dmg: 15
   Hiting: 0
   Hoting: 0
@@ -270,6 +271,7 @@ MonoBehaviour:
   isDie: 0
   text: {fileID: 5015890528755573929}
   hpbar: {fileID: 6287453484038382174}
+  Fire: {fileID: 2338679692822095654, guid: 231ac71c0656ce5479d9bf28c8fdd646, type: 3}
 --- !u!1 &1673687432847226
 GameObject:
   m_ObjectHideFlags: 0

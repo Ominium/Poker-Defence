@@ -5,8 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class GameUI : MonoBehaviour
 {
-    
 
+    
     public Text[] texts = new Text[5];
     public Text failtext;
     public static float time = 40.0f;
@@ -23,11 +23,14 @@ public class GameUI : MonoBehaviour
     }
     public void InputScene(int i)
     {
-        SceneManager.LoadScene(i);
+
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        gameObject.transform.GetChild(1).gameObject.SetActive(false);
+        gameObject.transform.GetChild(i).gameObject.SetActive(true);
     }
     public void OPen(GameObject game)
     {
-            game.SetActive(true);    
+       game.SetActive(true);    
     }
     public void ExitB(GameObject game)
     {

@@ -16,6 +16,7 @@ public class Card
 }
 public class FokerManager : MonoBehaviour
 {
+    public static bool Pokering = false;
     public GameObject Throwzone;//Thorw 시 나오는 패널
     public GameObject Lightning;
     public GameObject[] Enemys = new GameObject[50];// Enemy GameObject 배열을 담아둘 GameObject 배열
@@ -37,7 +38,7 @@ public class FokerManager : MonoBehaviour
     public static int CardCount3 = 0; // 실제 카운트
     public static float PokerDmg = 5; // 포커 데미지 배수 값
     bool drewing = false; // 드로우 코루틴 함수 bool 값
-    
+    public static float Drewspeed = 1.5f;
     void Awake()
     {
 
@@ -106,7 +107,7 @@ public class FokerManager : MonoBehaviour
                     Usercard[i] = card[card.Length - CardCount3 - 1];
                     buttons[i].image.sprite = Usercard[i].sprites;
                     CardCount3++;
-                    yield return new WaitForSeconds(1.5f);
+                    yield return new WaitForSeconds(Drewspeed);
 
                 }
             }
@@ -245,6 +246,7 @@ public class FokerManager : MonoBehaviour
     }
     void PokerAttack(int poker) // 포커 공격 함수
     {
+        Pokering = true;
         Transform tr;
         GameObject[] enemys;
         GameObject game;
@@ -256,7 +258,7 @@ public class FokerManager : MonoBehaviour
         tr.position = new Vector3(-17.35f, -3.23f, 0);
         for (int i = -1; i < poker; i++)
         {
-            distance = 20.5f + poker;
+            distance = 10.5f + (poker*3);
           
             if (enemys.Length > 0)
             {
@@ -288,18 +290,19 @@ public class FokerManager : MonoBehaviour
 
                         LightAttack(Enemys[j].transform);
                         Enemys[j].GetComponent<Enemys>().hp -= (int)(Throwcard[0].Num * PokerDmg * (poker + 1));
-                        Debug.Log(Enemys[j].GetComponent<Enemys>().hp);
                         break;
                     }
                 }
             }
         }
+        Pokering = false;
     }
     void LightAttack(Transform enemy)
     {
         GameObject a = Lightning;
-        Instantiate(a);
-        a.transform.position=enemy.position;
+        a.transform.position = enemy.position;
+        Instantiate(a,a.transform.position,a.transform.rotation);
+       
     }
     public void DeckSuffle() // 덱 추가 구매 섞기
     {

@@ -7,13 +7,14 @@ public class Mage : Enemys
 {
     public Text text;
     public Image hpbar;
-
+    public GameObject Fire;
+    bool fired = false;
     void Awake()
     {
         hp = 60 + (EnemyCtrl.round * 7);
         mhp = hp;
         lhp = hp;
-        dis = 2.25f;
+        dis = 4.25f;
     }
 
     void Start()
@@ -25,7 +26,18 @@ public class Mage : Enemys
     {
         base.Update();
         StartCoroutine(ShowDamage());
-
+        if (Hiting&&!fired)
+        {
+            StartCoroutine( Fireshot());
+        }
+    }
+    IEnumerator Fireshot()
+    {
+        fired = true;
+        Fire.transform.position = gameObject.transform.position;
+        Instantiate(Fire, Fire.transform.position, Fire.transform.rotation);
+        yield return new WaitForSeconds(dms);
+        fired = false;
     }
     IEnumerator ShowDamage()
     {

@@ -981,15 +981,19 @@ MonoBehaviour:
   damaged: 0
   tr: {fileID: 4119706187703290}
   movs: 2
+  Changemovs: 0
+  Realmovs: 0
   dmg: 1
   Hiting: 0
   Hoting: 0
   dis: 0
-  dms: 0.5
+  dms: 1.2
   vec: {x: -1, y: 0}
   isDie: 0
+  a: {fileID: 0}
   text: {fileID: 3116830137424144872}
   hpbar: {fileID: 4463157215261647344}
+  Gold: {fileID: 6601216843331152151, guid: 2365a8ff13ec88b43811fb205932a94c, type: 3}
 --- !u!1 &1805155455443680
 GameObject:
   m_ObjectHideFlags: 0
